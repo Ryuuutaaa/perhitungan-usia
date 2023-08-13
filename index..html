@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perhitungan Usia -dea afriza</title>
+    <style>
+      /* html,
+      body,
+      :root {
+        margin: 0;
+        width: 0;
+        box-sizing: border-box;
+      } */
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid black;
+        margin: auto;
+        padding: 16px;
+        width: 500px;
+      }
+
+      #birthday {
+        padding: 12px;
+        background-color: #333333;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      #check-button:hover {
+        background-color: black;
+        color: white;
+      }
+
+      label {
+        font-size: 18px;
+      }
+
+      .result {
+        font-size: 18px;
+        color: red;
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Cek Usia Anda</h2>
+      <label for="">masukan tahun kelahiran anda : </label>
+      <input type="number" placeholder="contoh 1945" id="birthday" />
+      <button id="check-button" onclick="checkResult()">Cek usia</button>
+      <p class="result" id="resultView"></p>
+    </div>
+    <!-- script -->
+    <script>
+      function checkResult() {
+        const birthdayInput = document.getElementById("birthday"); // di dalam const birthdayInput terdapat sebuah element id yang bernama birthday
+        const birthday = birthdayInput.value; // di dalaam const birthday berisi variabel birthdayInput yang akan di masukan sebuah value
+
+        const now = new Date().getFullYear(); // bernilai tahun ini secara otomatis
+        const age = now - birthday; // const agae berisi varial now dikurangi birthday
+
+        const resultView = document.getElementById("resultView"); // const resultView berisi elemen id hetml yang bernama resultView
+        resultView.innerHTML = "Usia anda adalah " + age; // lalu variabel  resultView ditambahkan element html dengan cara menggunakan innerHTML yang berisi usia anda adalah lalu di tambahkan dengan varibel age
+      }
+    </script>
+  </body>
+</html>
